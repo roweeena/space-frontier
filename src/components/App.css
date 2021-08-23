@@ -1,3 +1,134 @@
 body{
   text-align: center;
 }
+
+.App {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+
+.signup-title {
+  margin-top: 0;
+  margin-bottom: 16px;;
+  padding-top: 30px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 47px;
+}
+
+.signup-container {
+  background: #030F37;
+  padding: 0 25px;
+  margin: 0 20px;
+}
+
+.signup-subtitle {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 300;
+/* or 222% */
+
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.benefit-text {
+  font-weight: normal;
+  width: 230px;
+  font-size: 20px;
+  line-height: 40px;
+/* or 200% */
+
+  text-align: center;
+  letter-spacing: -0.03em;
+  margin-bottom: 0;
+}
+
+.benefit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 37px;
+}
+
+input[type=text] {
+    width: 100%;
+    background: transparent;
+    border-color: white;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 30px;
+    color: white;
+    height: 35px;
+}
+
+::placeholder {
+  color: white;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.signup-subscription {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  width: 253px;
+}
+
+.signup-subscription label {
+  display: flex;
+  margin-right: 35px;
+}
+
+.subscription-title {
+  text-align: left;
+  font-size: 20px;
+  line-height: 40px;
+/* identical to box height, or 200% */
+
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.benefit-paragraph {
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 40px;
+/* identical to box height, or 200% */
+
+text-align: center;
+letter-spacing: -0.03em;
+}
+
+.liftoff-button {
+  margin-top: 50px;
+  margin-bottom: 35px;
+  width: 255px;
+  height: 60px;
+  font-size: 25px;
+  line-height: 30px;
+  color: white;
+  background: #AD0707;
+  border-radius: 18px;
+
+}
+
+.signup-policy-statement {
+  font-family: SF Compact Display;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 21px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.signup-spam-statement {
+  margin: 0;
+  padding-bottom: 40px;
+}
