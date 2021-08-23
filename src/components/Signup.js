@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-import { signup } from '../helpers/auth';
 import { fsDb } from "../services/firebase"
 import { getCurrentUser } from '../helpers/auth';
 
-import { Typography } from 'antd';
-const { Text } = Typography;
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Button, FormLabel, TextField } from '@material-ui/core';
 
 class Signup extends Component {
   constructor() {
@@ -15,22 +15,41 @@ class Signup extends Component {
       firstName: '',
       lastName: '',
       email: '',
+      subscription: 'Daily',
+      // errors: {
+      //   firstName: '',
+      //   lastName: '',
+      //   email: ''
+      // }
     }
   };
 
-
-  renderFirstName = (event) => {
-    this.setState({firstName: event.target.value});
+  handleSubmit = async(event) => {
+    event.preventDefault();
+    this.setState({ error: '' });
+    // if(!this.validate()) {
+    //   // show popup
+    // }
+    try {
+      const { firstName, lastName, email, subscription } = this.state;
+      await fsDb.collection("users").doc().set({ firstName: firstName, lastName: lastName, email: email, subscription: subscription })
+    } catch (error) {
+      this.setState({ error: error.message });
+    }
   }
 
-  renderLastName = (event) => {
-    this.setState({lastName: event.target.value});
+  // validate = () => {
+  //   //if valid return true else fale
+  // }
+
+
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
-  renderEmail = (event) => {
-    this.setState({email: event.target.value});
+  onValChange = (event) => {
+    this.setState({subscription: event.target.value})
   }
-  
 
   render(){
     return(
@@ -51,17 +70,54 @@ class Signup extends Component {
 =======
       <form onSubmit={this.handleSubmit}>
         <div>
-          <input type="text" placeholder="first name" onChange={this.renderFirstName} />
+          <input 
+            id="first-name" 
+            type="text" 
+            name="firstName"
+            placeholder="First Name"
+            onChange={this.handleChange}
+          />
         </div>
         <div>
-          <input type="text" placeholder ="last name" onChange={this.renderLastName} />
+          <input 
+            id="last-name" 
+            type="text" 
+            name="lastName"
+            placeholder="Last Name"
+            onChange={this.handleChange}
+          />
         </div>
         <div>
-          <input placeholder="Email" name="email" type="email" onChange={this.renderEmail} />
+          <input 
+            id="email" 
+            type="text" 
+            name="email"
+            placeholder="Email"
+            onChange={this.handleChange}
+          />
         </div>
         <div>
-          {this.state.error ? <Text style={{ display: 'block' }} type="danger">{this.state.error}</Text> : null}
-          <button type="submit">Sign up</button>
+          Subscription type:
+          <label>
+            <input
+              type="radio"
+              value="Daily"
+              checked={this.state.subscription === "Daily"}
+              onChange={this.onValChange}/>
+            <span>Daily</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              value="Weekly Digest"
+              checked={this.state.subscription === "Weekly Digest"}
+              onChange={this.onValChange}/>
+            <span>Weekly Digest</span>
+          </label>
+        </div>
+        <div>
+        <button>Confirm</button>
         </div>
 >>>>>>> 8856d0e8e00205b85d91d66f936a9cc6ee820bb8
       </form>
