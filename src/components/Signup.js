@@ -57,17 +57,6 @@ class Signup extends Component {
       <h1>Sign up for our newsletter and 20% off</h1>
       <p>to use in the Argonauts shop</p>
       <p>including access to the <span>Cosmos Club</span></p>
-
-<<<<<<< HEAD
-      <form>
-      <input type="text" placeholder="first name"/>
-      <br/>
-      <input type="text" placeholder ="last name"/>
-      <br/>
-      <input type="text" placeholder = "email"/>
-      <br/>
-      <button>Subscribe</button>
-=======
       <form onSubmit={this.handleSubmit}>
         <div>
           <input 
@@ -119,7 +108,6 @@ class Signup extends Component {
         <div>
         <button>Confirm</button>
         </div>
->>>>>>> 8856d0e8e00205b85d91d66f936a9cc6ee820bb8
       </form>
       </div>
     )
