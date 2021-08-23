@@ -13,7 +13,7 @@ class Home extends Component {
       <p>Get the latest flight offers, planet deals and travel reviews delivered straight to your inbox</p>
       <br/>
       <p>Be inspired and subscribe below</p>
-
+      <button>Subscribe</button>
       </div>
 
 

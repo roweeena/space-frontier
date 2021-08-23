@@ -10,8 +10,11 @@ class Signup extends Component {
 
       <form>
       <input type="text" placeholder="first name"/>
+      <br/>
       <input type="text" placeholder ="last name"/>
+      <br/>
       <input type="text" placeholder = "email"/>
+      <br/>
       <button>Subscribe</button>
       </form>
       </div>
