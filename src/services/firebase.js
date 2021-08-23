@@ -2,11 +2,10 @@ import firebase from 'firebase';
 import 'firebase/storage';
 
 const config = {
-    apiKey: "AIzaSyB-TA5H7UM0niyP9RHEfU6BrOX_s-x2nUs",
-    authDomain: "space-comp.firebaseapp.com",
-    projectId: "space-comp",
-    storageBucket: "space-comp.appspot.com",
-    // databaseURL: "https://sweet-sweat-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    apiKey: "AIzaSyAa1gke4GYFuWWHRBXF3aiGd3U2174z8hE",
+    authDomain: "space-comp-comercial.firebaseapp.com",
+    projectId: "space-comp-comercial",
+    storageBucket: "space-comp-comercial.appspot.com",
 };
 
 firebase.initializeApp(config);
