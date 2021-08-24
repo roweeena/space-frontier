@@ -33,6 +33,7 @@ constructor(props){
   _handleClose(){
     this.setState({isHide: true, modalIsOpen: false})
   }
+
   render(){
     //css position:fixed
       if (this.state.isHide){
@@ -40,10 +41,11 @@ constructor(props){
       }
       return(
         <div className = "btm-bar" >
+        <div className="modal-close-button2" > <button onClick={this._handleClose}><img src="../images/Group.png" alt="X" /></button></div>
         <h2>Space, the final frontier</h2>
 
         <p>Get the latest flight offers, planet deals and travel reviews delivered straight to your inbox</p>
-        <div className="modal-close-button2" > <button onClick={this._handleClose}><img src="../images/Group.png" alt="X" /></button></div>
+
         <p>Be inspired and subscribe below</p>
 
         <button onClick={this._handleSubscribe} className ="subscribe-button">
