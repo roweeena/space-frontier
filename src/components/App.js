@@ -5,11 +5,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Home from './Home'
+import ReactModal from 'react-modal';
+import Dashboard from './Dashboard';
+import Home from './Home';
 import Signup from './Signup';
-
 import './App.css'
 
+ReactModal.setAppElement('#root');
 class App  extends Component {
 
   constructor(props){
@@ -20,22 +22,11 @@ class App  extends Component {
       };
       this._handleClose = this._handleClose.bind(this)
       this._handleOpen = this._handleOpen.bind(this)
-      this.toggleMenu = this.toggleMenu.bind(this)
     }
     _handleOpen = () => {
-     this.setState((prevState) => {
-        return{
-           modalIsOpen: !prevState.modalIsOpen
-        }
-     })
+     this.setState({modalIsOpen: true})
   }
 
-  toggleMenu = () => {
-
-    this.setState({
-      menuOpen: !this.state.menuOpen
-    })
-}
   _handleClose(){
     this.setState({isHide: true, modalIsOpen: false})
   }
@@ -51,7 +42,7 @@ class App  extends Component {
       <li className="nav-item"><a className="nav-link">why we go</a></li>
       <li className="nav-item"><a className="nav-link">the planets</a></li>
       <li className="nav-item"><a className="nav-link">deals and packages</a></li>
-      <li className="nav-item"><a onClick={this._handleOpen} className="nav-link">subscribe</a><Signup isModalOpen={this.state.modalIsOpen} closeModal={this._handleClose} /></li>
+      <li className="nav-item"><a onClick={this._handleOpen} className="nav-link">subscribe</a><Signup isOpenModal={this.state.modalIsOpen} onClose={this._handleClose} /></li>
       </ul>
 
       <div className="hamburger" onClick={this.toggleMenu}>

@@ -13,15 +13,18 @@ constructor(props){
     this._handleSubscribe = this._handleSubscribe.bind(this)
     this._handleClose = this._handleClose.bind(this)
   }
+
   hideBar(){
     if (window.scrollY >= 800 && this.state.isHide === true){
       console.log('hey')
       this.setState({isHide:false})
     }
   }
+
   componentDidMount(){
       window.addEventListener('scroll',this.hideBar);
   }
+
   componentWillUnmount(){
        window.removeEventListener('scroll',this.hideBar);
   }
@@ -51,7 +54,7 @@ constructor(props){
         <button onClick={this._handleSubscribe} className ="subscribe-button">
           Subscribe
         </button>
-           <Signup isModalOpen={this.state.modalIsOpen} closeModal={this._handleClose} />
+           <Signup isOpenModal={this.state.modalIsOpen} onClose={this._handleClose} />
         </div>
       )
     }
