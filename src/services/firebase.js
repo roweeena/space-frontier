@@ -2,13 +2,16 @@ import firebase from 'firebase';
 import 'firebase/storage';
 
 const config = {
-    apiKey: "AIzaSyB-TA5H7UM0niyP9RHEfU6BrOX_s-x2nUs",
-    authDomain: "space-comp.firebaseapp.com",
-    projectId: "space-comp",
-    storageBucket: "space-comp.appspot.com",
-    // databaseURL: "https://sweet-sweat-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    apiKey: "AIzaSyAa1gke4GYFuWWHRBXF3aiGd3U2174z8hE",
+    authDomain: "space-comp-comercial.firebaseapp.com",
+    projectId: "space-comp-comercial",
+    storageBucket: "space-comp-comercial.appspot.com",
+    messagingSenderId: "745451876275",
+    appId: "1:745451876275:web:d5b6954425d0a72dfa65c6",
+    measurementId: "G-QNJTE3ZCXQ"
 };
 
 firebase.initializeApp(config);
 export const auth = firebase.auth;
 export const fsDb = firebase.firestore();
+export const firebaseAnalytics = firebase.analytics();
