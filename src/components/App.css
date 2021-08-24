@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body{
   text-align: center;
 }
@@ -17,9 +19,15 @@ body{
 }
 
 .signup-container {
+  margin: 0 20px;
+}
+
+.signup-body {
   background: #030F37;
   padding: 0 25px;
-  margin: 0 20px;
+  overflow: auto;
+  height: 67vh;
+  font-family: 'Inter', sans-serif;
 }
 
 .signup-subtitle {
@@ -78,7 +86,7 @@ input[type=text] {
 
 .signup-subscription label {
   display: flex;
-  margin-right: 35px;
+  margin-right: 30px;
 }
 
 .subscription-title {
@@ -114,7 +122,7 @@ letter-spacing: -0.03em;
   color: white;
   background: #AD0707;
   border-radius: 18px;
-
+  border: none;
 }
 
 .signup-policy-statement {
@@ -131,4 +139,47 @@ letter-spacing: -0.03em;
 .signup-spam-statement {
   margin: 0;
   padding-bottom: 40px;
+}
+
+/* ===================== Modal ========================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+}
+
+.modal-content {
+  position: absolute;
+    /* inset: 40px; */
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    outline: none;
+    /* padding: 20px; */
+    color: white;
+}
+
+.signup-header {
+  /* background: rgba(0, 0, 0, 0.75); */
+  padding-bottom: 12px;
+  background-color: transparent;
+}
+
+.modal-close-button {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.modal-close-button button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.modal-close-button button img {
+  width: 14px;
+}
+
+.modal-logo {
+  margin-top: 50px;
 }
