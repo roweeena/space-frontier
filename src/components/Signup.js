@@ -30,7 +30,7 @@ class Signup extends Component {
   renderEmail = (event) => {
     this.setState({email: event.target.value});
   }
-  
+
 
   render(){
     return(
@@ -39,16 +39,6 @@ class Signup extends Component {
       <p>to use in the Argonauts shop</p>
       <p>including access to the <span>Cosmos Club</span></p>
 
-<<<<<<< HEAD
-      <form>
-      <input type="text" placeholder="first name"/>
-      <br/>
-      <input type="text" placeholder ="last name"/>
-      <br/>
-      <input type="text" placeholder = "email"/>
-      <br/>
-      <button>Subscribe</button>
-=======
       <form onSubmit={this.handleSubmit}>
         <div>
           <input type="text" placeholder="first name" onChange={this.renderFirstName} />
@@ -63,7 +53,6 @@ class Signup extends Component {
           {this.state.error ? <Text style={{ display: 'block' }} type="danger">{this.state.error}</Text> : null}
           <button type="submit">Sign up</button>
         </div>
->>>>>>> 8856d0e8e00205b85d91d66f936a9cc6ee820bb8
       </form>
       </div>
     )
