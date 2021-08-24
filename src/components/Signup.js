@@ -25,31 +25,30 @@ class Signup extends Component {
     }
   }
 
+
   render(){
     return(
-      <div>
       <ReactModal
-        isOpen={this.props.isOpenModal}
-        overlayClassName="modal-overlay"
-        className="modal-content"
-      >
-        <div className="signup-container" >
-          <div className="signup-header" >
-            <div className="modal-close-button" >
-              <button onClick={this.props.onClose}>
-                <img src="../images/Group.png" alt="X" />
-              </button>
-            </div>
-            <div className="modal-logo" >
-              <img src="../images/logoargonautstext.svg" alt="logo" />
-            </div>
+      isOpen={this.props.isOpenModal}
+      overlayClassName="modal-overlay"
+      className="modal-content"
+    >
+      <div className="signup-container" >
+        <div className="signup-header" >
+          <div className="signup-close-button" >
+            <button onClick={this.props.onClose}>
+              <img src="../images/Group.png" alt="X" />
+            </button>
           </div>
-          <div className={`signup-body ${this.state.showThankyou ? "thankyou-body" : ""}`}>
-            {this.renderBody()}
+          <div className="modal-logo" >
+            <img src="../images/logoargonautstext.svg" alt="logo" />
           </div>
         </div>
-      </ReactModal>
+        <div className={`signup-body ${this.state.showThankyou ? "thankyou-body" : ""}`}>
+          {this.renderBody()}
+        </div>
       </div>
+    </ReactModal>
     )
   }
 }
