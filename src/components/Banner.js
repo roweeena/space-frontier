@@ -1,14 +1,20 @@
 import React, {Component} from 'react';
-
+import ReactModal from 'react-modal';
+import Signup from './Signup'
 
 class Banner extends Component{
 constructor(props){
     super(props);
-    this.state={isHide:true};
+    this.state={
+      isHide: true,
+      modalIsOpen: false,
+    };
     this.hideBar = this.hideBar.bind(this)
+    this._handleSubscribe = this._handleSubscribe.bind(this)
+    this._handleClose = this._handleClose.bind(this)
   }
   hideBar(){
-    if (window.scrollY > 700 && this.state.isHide === true){
+    if (window.scrollY >= 800 && this.state.isHide === true){
       console.log('hey')
       this.setState({isHide:false})
     }
@@ -19,21 +25,31 @@ constructor(props){
   componentWillUnmount(){
        window.removeEventListener('scroll',this.hideBar);
   }
+
+  _handleSubscribe(){
+    this.setState({modalIsOpen: true});
+  }
+
+  _handleClose(){
+    this.setState({isHide: true, modalIsOpen: false})
+  }
   render(){
     //css position:fixed
       if (this.state.isHide){
         return '';
       }
       return(
-        <div className = "btm-bar" style= {{backgroundImage: `url("/banner-desktop@1x.png")`, width: "100%", "height":  "100px"}}>
-        <div> <button onClick={()=> {this.setState({isHide: true})}}>x</button></div>
+        <div className = "btm-bar" >
         <h2>Space, the final frontier</h2>
 
         <p>Get the latest flight offers, planet deals and travel reviews delivered straight to your inbox</p>
-        <br/>
+        <div className="modal-close-button2" > <button onClick={this._handleClose}><img src="../images/Group.png" alt="X" /></button></div>
         <p>Be inspired and subscribe below</p>
-        <button>Subscribe</button>
 
+        <button onClick={this._handleSubscribe} className ="subscribe-button">
+          Subscribe
+        </button>
+           <Signup isModalOpen={this.state.modalIsOpen} closeModal={this._handleClose} />
         </div>
       )
     }

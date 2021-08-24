@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body{
-  margin: 20px;
   font-family: 'SF Compact Display', sans-serif;
+}
+
+h2 {
+  margin: 10px;
 }
 
 nav {
@@ -24,11 +27,10 @@ nav a{
 
 }
 
-
 li {
   display: inline;
   margin: 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .logo{
   height: 20px;
@@ -39,10 +41,16 @@ li {
   height: 70px;
 }
 .home-text{
-  max-width: 1000px;
   margin: 12px auto;
   padding: 10px;
+  -webkit-column-count: 2;/* Chrome, Safari, Opera */
+  -moz-column-count: 2;/* Firefox */
   column-count: 2;
+  -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+           column-gap: 10px;
+  column-gap: 40px;
+
 }
 .home-image {
   margin-top: 30px;
@@ -51,22 +59,27 @@ li {
   margin: 0;
   display: block;
   width: 100%;
+  height: 300px;
 }
 
 .btm-bar{
+  background-image: url('./banner-desktop@1x.png');
   column-count: 3;
   background-color: #030F37;
   color: white;
-  margin: 5px;
-  padding: 10px;
+  height: 7em;
+  padding: 20px;
   text-align: center;
 }
 
-
+.btm-bar p{
+  line-height: 2em;
+  font-size: 18px;
+}
 
 .btm-bar > button{
 
-  background-color: red;
+  background-color: #AD0707;
   font-family: inherit;
   font-size: 20px;
   color: white;
@@ -75,7 +88,9 @@ li {
   height: 50px;
 
 }
-
+.liftoff-button, .subscribe-button:hover{
+  border: 2px solid white;
+}
 .App {
   background: rgba(0, 0, 0, 0.75);
   color: white;
@@ -91,10 +106,12 @@ li {
 }
 
 .signup-container {
+
   margin: 0 20px;
 }
 
 .signup-body {
+  text-align: center;
   background: #030F37;
   padding: 0 25px;
   overflow: auto;
@@ -127,6 +144,7 @@ li {
 .benefit-container {
   display: flex;
   flex-direction: column;
+  column-count: 4;
   align-items: center;
   margin-top: 37px;
 }
@@ -150,6 +168,7 @@ input[type=text] {
 }
 
 .signup-subscription {
+  text-align: center;
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 50px;
@@ -198,7 +217,6 @@ letter-spacing: -0.03em;
 }
 
 .signup-policy-statement {
-  font-family: SF Compact Display;
   font-style: normal;
   font-weight: 300;
   font-size: 17px;
@@ -223,6 +241,8 @@ letter-spacing: -0.03em;
 
 .modal-content {
   position: absolute;
+  width: 100%;
+  height: 100%;
     /* inset: 40px; */
     background: rgba(0, 0, 0, 0.75);
     border-radius: 4px;
@@ -238,20 +258,76 @@ letter-spacing: -0.03em;
 }
 
 .modal-close-button {
-  margin-top: 30px;
+  float: right;
   text-align: right;
 }
 
-.modal-close-button button {
+.modal-close-button button, .modal-close-button2 button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.modal-close-button2 {
+  float: right;
+  text-align: right;
+  background-color: transparent;
+}
+
+.modal-close-button2 img{
+  width: 1em;
   background-color: transparent;
   outline: none;
   border: none;
 }
 
-.modal-close-button button img {
-  width: 14px;
-}
 
 .modal-logo {
+  margin-left: 25em;
   margin-top: 50px;
+  display: block;
+width: 300px;
+max-width: 100%;
+margin: 0 auto;
+}
+
+.benefits{
+  display:inline;
+}
+
+@media (max-width: 375px) {
+
+  #root > img {
+    margin: 0;
+  }
+  .home-text > h2 {
+    font-size: 60px;
+    margin: 0.1em;
+  }
+  .home-image {
+    width: 100%;
+    margin: 0;
+  }
+  .home-text{
+
+    margin: 12px auto;
+    padding: 10px;
+    column-count: 2;
+  }
+
+  .btm-bar{
+    background-image: hidden;
+    column-count: 1;
+    background-color: #030F37;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    line-height: 2em;
+  }
+  .btm-bar > h2 {
+    display: none;
+  }
+  .btm-bar > img{
+    visibility: hidden;
+  }
 }

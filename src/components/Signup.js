@@ -17,11 +17,6 @@ class Signup extends Component {
       lastName: '',
       email: '',
       subscription: 'Daily',
-      // errors: {
-      //   firstName: '',
-      //   lastName: '',
-      //   email: ''
-      // }
     }
   };
 
@@ -39,11 +34,6 @@ class Signup extends Component {
     }
   }
 
-  // validate = () => {
-  //   //if valid return true else fale
-  // }
-
-
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   }
@@ -52,16 +42,13 @@ class Signup extends Component {
     this.setState({subscription: event.target.value})
   }
 
+
   render(){
     return(
       <div>
-        <button onClick={() => {
-          this.setState({modalIsOpen: true})
-        }}>
-            Modal Click!
-        </button>
+
       <ReactModal
-        isOpen={this.state.modalIsOpen}
+        isOpen={this.props.isModalOpen}
         overlayClassName="modal-overlay"
         className="modal-content"
       >
@@ -69,7 +56,7 @@ class Signup extends Component {
         <div className="signup-header" >
           <div className="modal-close-button" >
             <button onClick={() => {
-              this.setState({modalIsOpen: false})
+              this.props.closeModal()
             }}>
               <img src="../images/Group.png" alt="X" />
             </button>
@@ -142,6 +129,7 @@ class Signup extends Component {
             </div>
           </form>
           <p className="benefit-paragraph" >The benefits start at sign-up.</p>
+          <div className="benefits">
           <Benefit
             text="20% off to use in the Argonauts Shop, including free delivery."
             image="../images/vector.png"
@@ -158,6 +146,7 @@ class Signup extends Component {
             text="Special offers to thank our Argonaughts and to celebrate special moments, like birthdays!"
             image="../images/cake.png"
           />
+          </div>
           <button className="liftoff-button" onClick={this.handleSubmit} >
             Lift off
           </button>
