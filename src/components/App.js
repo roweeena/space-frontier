@@ -1,17 +1,27 @@
 import React, {Component} from 'react';
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 
-import Signup from './Signup';
-
+import Dashboard from './Dashboard';
+import Home2 from './Home2';
 import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-    <Signup  />
-
-
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <Home2 />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

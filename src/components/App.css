@@ -87,6 +87,7 @@ input[type=text] {
 .signup-subscription label {
   display: flex;
   margin-right: 30px;
+  flex-direction: row-reverse;
 }
 
 .subscription-title {
@@ -126,10 +127,8 @@ letter-spacing: -0.03em;
 }
 
 .signup-policy-statement {
-  font-family: SF Compact Display;
+  font-size: 15px;
   font-style: normal;
-  font-weight: 300;
-  font-size: 17px;
   line-height: 21px;
   text-align: center;
   margin-top: 0;
@@ -137,6 +136,7 @@ letter-spacing: -0.03em;
 }
 
 .signup-spam-statement {
+  font-size: 15px;
   margin: 0;
   padding-bottom: 40px;
 }
@@ -151,7 +151,7 @@ letter-spacing: -0.03em;
 
 .modal-content {
   position: absolute;
-    /* inset: 40px; */
+    inset: 0;
     background: rgba(0, 0, 0, 0.75);
     border-radius: 4px;
     outline: none;
@@ -182,4 +182,17 @@ letter-spacing: -0.03em;
 
 .modal-logo {
   margin-top: 50px;
+}
+
+.thankyou-body {
+  height: auto;
+}
+
+.thankyou-title {
+  margin-top: 35px;
+  margin-bottom: 11px;
+}
+
+.thankyou-subtitle2 {
+  margin-bottom: 75px;
 }
